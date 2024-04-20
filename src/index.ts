@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import userRoute from "./routes/UserRoute";
 import myRestaurantRoute from "./routes/MyRestaurantRoute";
 import { v2 as cloudinary } from "cloudinary";
+import restaurantRoute from "./routes/RestaurantRoute";
 
 
 
@@ -35,6 +36,7 @@ app.get("/health", async(req: Request, res: Response) => {
 
 app.use("/api/my/user", userRoute);
 app.use("/api/my/restaurant", myRestaurantRoute);
+app.use("/api/restaurants", restaurantRoute);
 
 app.listen(8888, () => {
     console.log("Server is running on localhost:8888!")
